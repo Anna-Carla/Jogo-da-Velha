@@ -1,1 +1,9 @@
-.board
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(90deg, rgb(105, 20, 215, 1) 0%, rgb(234, 0, 255, 1) 100%);
+}
