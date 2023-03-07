@@ -6,7 +6,7 @@
 
 body {
     height: 100vh; /*Para o body ocupar 100% da largura*/
-    width: 100vh; /*Para o body ocupar 100% da altura*/
+    width: 100vw; /*Para o body ocupar 100% da altura*/
     background: linear-gradient(90deg, rgb(105, 20, 215, 1) 0%, rgb(234, 0, 255, 1) 100%);
 }
 
@@ -29,6 +29,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.cell.x, .cell.circle {
+    
 }
 
 /*Apagando as linhas de cada célula para fazer o formato de jogo da velha*/
@@ -48,6 +53,37 @@ body {
     border-right: none
 }
 
+
+/* X */
+
+.cell.x::before, .cell.x::after {
+    content: "";
+    height: calc(100px* 0.10);
+    width: calc(100px * 0.9);
+    background: white;
+    position: absolute;
+}
+
+.cell::before {
+    transform: rotate(45deg);
+}
+
+.cell.x::after {
+    transform: rotate(-45deg);
+}
+
+/* Circle */
+
+.cell.circle::before, .cell.circle::after {
+    content: "";
+    height: calc(100px* 0.9);
+    width: calc(100px * 0.9);
+    background: white;
+    position: absolute;
+    border-radius: 50%;
+}
+
+/* MENSAGEM DE VITÓRIA*/
 .winning-message {
     display: none;
 }
