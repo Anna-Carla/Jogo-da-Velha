@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -22,6 +24,11 @@ body {
     grid-template-columns: repeat(3, auto);
 }
 
+.board.x .cell:not(.x):not(.circle):hover::after, .board.x .cell:not(.x):not(.circle):hover::before, .board.circle .cell:not(.x):not(.circle):hover::after, .board.circle .cell:not(.x):not(.circle):hover::before {
+    background: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Célula */
 .cell {
     width: 100px;
     height: 100px;
@@ -33,7 +40,7 @@ body {
 }
 
 .cell.x, .cell.circle {
-    
+    cursor: not-allowed;
 }
 
 /*Apagando as linhas de cada célula para fazer o formato de jogo da velha*/
@@ -56,7 +63,7 @@ body {
 
 /* X */
 
-.cell.x::before, .cell.x::after {
+.cell.x::before, .cell.x::after, .board.x .cell:not(.x):not(.circle):hover::after, .board.x .cell:not(.x):not(.circle):hover::before{
     content: "";
     height: calc(100px* 0.10);
     width: calc(100px * 0.9);
@@ -64,17 +71,17 @@ body {
     position: absolute;
 }
 
-.cell::before {
+.cell::before, .board.x .cell:not(.x):not(.circle):hover::before {
     transform: rotate(45deg);
 }
 
-.cell.x::after {
+.cell.x::after,  .board.x .cell:not(.x):not(.circle):hover::after {
     transform: rotate(-45deg);
 }
 
 /* Circle */
 
-.cell.circle::before, .cell.circle::after {
+.cell.circle::before, .cell.circle::after, .board.circle .cell:not(.x):not(.circle):hover::after, .board.circle .cell:not(.x):not(.circle):hover::before{
     content: "";
     height: calc(100px* 0.9);
     width: calc(100px * 0.9);
@@ -86,4 +93,36 @@ body {
 /* MENSAGEM DE VITÓRIA*/
 .winning-message {
     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    flex-direction: column;
+}
+
+.winning-message-botton {
+    font-size: 2.5rem;
+    background-color: rgb(105, 20, 215, 1);
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    margin-top: 16px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.winning-message-botton:hover {
+    background-color: white;
+    color: rgb(105, 20, 215, 1);
+}
+
+.winning-message-text {
+    color: white;
+    font-size: 5rem;
+    font-family: 'Poppins', sans-serif;
 }
