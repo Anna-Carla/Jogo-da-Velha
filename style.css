@@ -153,3 +153,7 @@ body {
   font-size: 5rem;
   font-family: "Poppins", sans-serif;
 }
+
+.show-winning-message {
+  display: flex;
+}
