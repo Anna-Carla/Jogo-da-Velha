@@ -6,14 +6,32 @@
   padding: 0;
 }
 
+.title {
+  text-align: center; /* Centraliza o texto */
+  margin-top: 50px; /* Adicione margem superior para espaçamento */
+  font-family: "Poppins", sans-serif; /* Usando a fonte Poppins */
+  font-weight: 500; /* Peso da fonte */
+  font-size: 2rem; /* Tamanho da fonte */
+  color: white; /* Cor do texto */
+}
+
 body {
-  height: 100vh; /*Para o body ocupar 100% da largura*/
-  width: 100vw; /*Para o body ocupar 100% da altura*/
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh; /* Mantém o corpo ocupando pelo menos toda a altura da tela */
   background: linear-gradient(
     90deg,
     rgb(105, 20, 215, 1) 0%,
     rgb(234, 0, 255, 1) 100%
   );
+}
+
+.header {
+  text-align: center;
+  margin-top: 20px; /* Adiciona espaço acima do título */
+  margin-bottom: 20px; /* Adiciona espaço abaixo do título */
 }
 
 .board {
@@ -26,6 +44,7 @@ body {
   justify-items: center;
   align-items: center;
   grid-template-columns: repeat(3, auto);
+  margin-top: 70px; /* Ajuste a margem superior para mover o jogo para baixo */
 }
 
 .board.x .cell:not(.circle):hover::before,
