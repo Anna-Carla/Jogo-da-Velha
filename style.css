@@ -6,6 +6,21 @@
   padding: 0;
 }
 
+@media (max-width: 600px) {
+  .board {
+    max-width: 300px; /* Reduza o tamanho do tabuleiro para telas menores */
+  }
+
+  .winning-message-text {
+    font-size: 1.5rem;
+  }
+
+  .winning-message-button {
+    font-size: 1rem;
+    padding: 6px 12px;
+  }
+}
+
 .title {
   text-align: center; /* Centraliza o texto */
   margin-top: 50px; /* Adicione margem superior para espaçamento */
